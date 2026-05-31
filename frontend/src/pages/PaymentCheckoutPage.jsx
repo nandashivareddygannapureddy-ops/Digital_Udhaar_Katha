@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import API from '../api/axios';
 import { FaCheckCircle, FaTimesCircle, FaExclamationTriangle, FaArrowLeft, FaQrcode, FaLock, FaCheck, FaCreditCard, FaUser, FaRegClock, FaDownload, FaWhatsapp, FaPrint, FaRegCopy, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 
@@ -98,7 +98,7 @@ export default function PaymentCheckoutPage() {
 
     const fetchCheckoutInfo = async () => {
       try {
-        const response = await axios.get(`/api/reminders/checkout/${customerId}`);
+        const response = await API.get(`/reminders/checkout/${customerId}`);
         if (response.data?.success) {
           const fetchedData = response.data.data;
           setData(fetchedData);
@@ -162,7 +162,7 @@ export default function PaymentCheckoutPage() {
 
     setSubmitting(true);
     try {
-      const response = await axios.post(`/api/reminders/checkout/${customerId}/confirm-payment`, {
+      const response = await API.post(`/reminders/checkout/${customerId}/confirm-payment`, {
         utr: utr.trim(),
         amount: parseFloat(amountPaid),
       });
@@ -562,7 +562,7 @@ export default function PaymentCheckoutPage() {
             {/* Action buttons drawer */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 print:hidden">
               <a 
-                href={`/api/reminders/checkout/${customerId}/receipt`}
+                href={`${API.defaults.baseURL}/reminders/checkout/${customerId}/receipt`}
                 download
                 className="py-3 px-4 border border-rose-200 text-rose-600 hover:bg-rose-50/50 rounded-xl font-bold text-xs flex items-center justify-center gap-2 cursor-pointer transition-all shadow-xs bg-transparent no-underline text-center"
               >

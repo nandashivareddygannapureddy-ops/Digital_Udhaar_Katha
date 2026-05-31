@@ -1,7 +1,17 @@
 import axios from 'axios';
 
+const getBaseURL = () => {
+  if (import.meta.env.VITE_API_URL) {
+    return import.meta.env.VITE_API_URL;
+  }
+  if (import.meta.env.PROD) {
+    return 'https://digital-udhaar-katha.onrender.com/api';
+  }
+  return '/api';
+};
+
 const API = axios.create({
-  baseURL: '/api',
+  baseURL: getBaseURL(),
 });
 
 API.interceptors.request.use((config) => {
