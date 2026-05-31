@@ -2,12 +2,12 @@ import axios from 'axios';
 
 const getBaseURL = () => {
   if (import.meta.env.VITE_API_URL) {
-    return import.meta.env.VITE_API_URL;
+    return import.meta.env.VITE_API_URL.replace(/\/api\/?$/, '');
   }
   if (import.meta.env.PROD) {
-    return 'https://digital-udhaar-katha.onrender.com/api';
+    return 'https://digital-udhaar-katha.onrender.com';
   }
-  return '/api';
+  return '';
 };
 
 const API = axios.create({
@@ -15,6 +15,9 @@ const API = axios.create({
 });
 
 API.interceptors.request.use((config) => {
+  if (config.url && !config.url.startsWith('http') && !config.url.startsWith('/api')) {
+    config.url = `/api${config.url.startsWith('/') ? '' : '/'}${config.url}`;
+  }
   const user = JSON.parse(localStorage.getItem('udhaar-user'));
   if (user?.token) {
     config.headers.Authorization = `Bearer ${user.token}`;

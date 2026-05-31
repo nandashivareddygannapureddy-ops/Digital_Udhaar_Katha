@@ -562,7 +562,7 @@ export default function PaymentCheckoutPage() {
             {/* Action buttons drawer */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 print:hidden">
               <a 
-                href={`${API.defaults.baseURL}/reminders/checkout/${customerId}/receipt`}
+                href={`${API.defaults.baseURL}/api/reminders/checkout/${customerId}/receipt`}
                 download
                 className="py-3 px-4 border border-rose-200 text-rose-600 hover:bg-rose-50/50 rounded-xl font-bold text-xs flex items-center justify-center gap-2 cursor-pointer transition-all shadow-xs bg-transparent no-underline text-center"
               >
