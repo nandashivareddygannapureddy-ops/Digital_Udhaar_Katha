@@ -3,7 +3,7 @@ import { useNavigate, useOutletContext } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 import { useLanguage } from '../../context/LanguageContext';
 import { useTheme } from '../../context/ThemeContext';
-import { HiOutlineMenuAlt2, HiOutlineUser, HiOutlineLogout, HiOutlineSun, HiOutlineMoon } from 'react-icons/hi';
+import { FiMenu, FiUser, FiLogOut, FiSun, FiMoon } from 'react-icons/fi';
 
 const Header = ({ title, subtitle, onToggleSidebar }) => {
   const { user, logout } = useAuth();
@@ -44,7 +44,7 @@ const Header = ({ title, subtitle, onToggleSidebar }) => {
           onClick={toggleSidebar}
           id="menu-toggle"
         >
-          <HiOutlineMenuAlt2 size={22} />
+          <FiMenu size={22} />
         </button>
         <div>
           <h1 className="text-xl font-bold text-deep-navy leading-none">{title}</h1>
@@ -64,9 +64,9 @@ const Header = ({ title, subtitle, onToggleSidebar }) => {
           title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
         >
           {theme === 'dark' ? (
-            <HiOutlineSun className="text-amber-500 animate-pulse" size={18} />
+            <FiSun className="text-amber-500 animate-pulse" size={18} />
           ) : (
-            <HiOutlineMoon className="text-indigo-600" size={18} />
+            <FiMoon className="text-indigo-600" size={18} />
           )}
         </button>
 
@@ -94,14 +94,14 @@ const Header = ({ title, subtitle, onToggleSidebar }) => {
                 onClick={() => { setDropdownOpen(false); navigate('/settings'); }}
                 className="flex items-center gap-2.5 w-full px-3 py-2 bg-transparent border-0 text-slate-gray cursor-pointer rounded-lg text-sm transition-colors hover:bg-slate-gray/5 hover:text-deep-navy text-left font-medium"
               >
-                <HiOutlineUser className="shrink-0 text-slate-gray" size={16} /> Profile & Settings
+                <FiUser className="shrink-0 text-slate-gray" size={16} /> Profile & Settings
               </button>
               <div className="h-px bg-soft-gray my-1.5 mx-2" />
               <button
                 onClick={handleLogout}
                 className="flex items-center gap-2.5 w-full px-3 py-2 bg-transparent border-0 text-red-give cursor-pointer rounded-lg text-sm transition-colors hover:bg-red-give/10 text-left font-medium"
               >
-                <HiOutlineLogout className="shrink-0 text-red-give" size={16} /> Logout
+                <FiLogOut className="shrink-0 text-red-give" size={16} /> Logout
               </button>
             </div>
           )}

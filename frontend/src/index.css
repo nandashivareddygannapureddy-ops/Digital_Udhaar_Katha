@@ -37,7 +37,7 @@
 @theme {
   --color-soft-white: var(--bg-soft-white);
   --color-light-cream: var(--bg-light-cream);
-  --color-orange: #E22D34;
+  --color-orange: #6366F1; /* Premium Royal Indigo-Violet */
   --color-deep-navy: var(--text-main);
   --color-slate-gray: var(--text-muted);
   --color-soft-gray: var(--border-main);
@@ -45,14 +45,14 @@
   
   --color-premium-dark: #1A1C20;
   
-  --color-green-get: #10B981;
-  --color-red-give: #EF4444;
-  --color-warning-pending: #F59E0B;
-  --color-info-analytics: #3B82F6;
+  --color-green-get: #10B981; /* Emerald Green */
+  --color-red-give: #F43F5E; /* Premium Rose Red */
+  --color-warning-pending: #F59E0B; /* Amber */
+  --color-info-analytics: #3B82F6; /* Sapphire Blue */
   
-  --color-orange-hover: #C52329;
+  --color-orange-hover: #4F46E5; /* Deep Indigo */
   --color-green-hover: #059669;
-  --color-red-hover: #DC2626;
+  --color-red-hover: #E11D48;
 }
 
 body {

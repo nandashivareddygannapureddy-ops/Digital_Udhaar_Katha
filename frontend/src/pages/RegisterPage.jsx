@@ -371,6 +371,16 @@ const RegisterPage = () => {
           Continue with Google
         </button>
 
+        <div className="text-center mt-2.5">
+          <button
+            type="button"
+            onClick={() => setShowMockChooser(true)}
+            className="text-[11px] text-orange hover:text-orange-hover font-semibold transition-colors bg-transparent border-none cursor-pointer hover:underline"
+          >
+            Google Auth blocked? Try Simulated Accounts
+          </button>
+        </div>
+
         <div className="text-center mt-5 text-sm text-slate-gray">
           Already have an account? <Link to="/login" className="text-orange font-semibold hover:underline">Sign in</Link>
         </div>

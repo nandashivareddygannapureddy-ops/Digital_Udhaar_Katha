@@ -1,18 +1,18 @@
 import { NavLink } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
-import { HiOutlineHome, HiOutlineUsers, HiOutlineCog, HiOutlineBell, HiOutlineBookOpen, HiOutlineClock } from 'react-icons/hi';
+import { FiHome, FiUsers, FiSettings, FiBell, FiBookOpen, FiClock } from 'react-icons/fi';
 import Logo from '../Common/Logo';
 
 const Sidebar = ({ isOpen, onClose }) => {
   const { t } = useLanguage();
 
   const links = [
-    { to: '/', icon: <HiOutlineHome size={20} />, label: t('dashboard') },
-    { to: '/customers', icon: <HiOutlineUsers size={20} />, label: t('customers') },
-    { to: '/cashbook', icon: <HiOutlineBookOpen size={20} />, label: t('cashbook') },
-    { to: '/reminders', icon: <HiOutlineBell size={20} />, label: t('reminders') },
-    { to: '/settings', icon: <HiOutlineCog size={20} />, label: t('settings') },
-    { to: '/history', icon: <HiOutlineClock size={20} />, label: 'Transaction History' },
+    { to: '/', icon: <FiHome size={20} />, label: t('dashboard') },
+    { to: '/customers', icon: <FiUsers size={20} />, label: t('customers') },
+    { to: '/cashbook', icon: <FiBookOpen size={20} />, label: t('cashbook') },
+    { to: '/reminders', icon: <FiBell size={20} />, label: t('reminders') },
+    { to: '/settings', icon: <FiSettings size={20} />, label: t('settings') },
+    { to: '/history', icon: <FiClock size={20} />, label: 'Transaction History' },
   ];
 
   return (
