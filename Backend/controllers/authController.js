@@ -189,6 +189,14 @@ const setupSecurity = async (req, res, next) => {
       user.biometricPublicKey = biometricPublicKey;
     }
 
+    // Auto-repair missing name or storeName in older user documents to prevent validation failures
+    if (!user.name) {
+      user.name = 'Google User';
+    }
+    if (!user.storeName) {
+      user.storeName = `${user.name}'s Store`;
+    }
+
     await user.save();
 
     res.status(200).json({
@@ -656,6 +664,14 @@ const googleLogin = async (req, res, next) => {
     if (user.loginActivities.length > 20) {
       user.loginActivities = user.loginActivities.slice(0, 20);
     }
+
+    // Auto-repair missing name or storeName in older user documents to prevent validation failures
+    if (!user.name) {
+      user.name = 'Google User';
+    }
+    if (!user.storeName) {
+      user.storeName = `${user.name}'s Store`;
+    }
     
     await user.save();
 
@@ -728,6 +744,14 @@ const googleLoginMock = async (req, res, next) => {
     
     if (user.loginActivities.length > 20) {
       user.loginActivities = user.loginActivities.slice(0, 20);
+    }
+
+    // Auto-repair missing name or storeName in older user documents to prevent validation failures
+    if (!user.name) {
+      user.name = name || 'Google User';
+    }
+    if (!user.storeName) {
+      user.storeName = `${user.name}'s Store`;
     }
     
     await user.save();
