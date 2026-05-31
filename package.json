@@ -1,0 +1,8 @@
+{
+  "name": "digital-udhaar-katha-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm install --prefix frontend && npm run build --prefix frontend"
+  }
+}
