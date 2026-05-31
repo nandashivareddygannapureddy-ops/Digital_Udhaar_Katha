@@ -7,18 +7,18 @@ import { useGoogleLogin } from '@react-oauth/google';
 
 const mockGoogleAccounts = [
   {
-    name: 'Akhilesh Goud',
-    email: 'akhilesh.goud@mock.digitaludhaar.com',
+    name: 'Nandashivareddy Gannapureddy',
+    email: 'nandashivareddygannapureddy@gmail.com',
     avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&h=150'
   },
   {
-    name: 'Punju Store Owner',
-    email: 'punju.store@mock.digitaludhaar.com',
+    name: 'Akhilesh Goud',
+    email: 'akhilesh.goud@gmail.com',
     avatar: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=150&h=150'
   },
   {
     name: 'Demo Merchant',
-    email: 'demo.merchant@mock.digitaludhaar.com',
+    email: 'demo.merchant@gmail.com',
     avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&h=150'
   }
 ];
