@@ -125,7 +125,7 @@ const RegisterPage = () => {
   });
 
   const handleGoogleClick = () => {
-    const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+    const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID || '307628625740-9cjprtk1hpua2cmhanlee8nqpss26org.apps.googleusercontent.com';
     if (!clientId || clientId.includes('dummy')) {
       setShowMockChooser(true);
       return;

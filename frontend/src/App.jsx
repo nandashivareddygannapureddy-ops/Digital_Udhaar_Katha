@@ -104,7 +104,7 @@ function App() {
     <BrowserRouter>
       <ThemeProvider>
         <AuthProvider>
-          <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID || "1023724395376-dummyclientid.apps.googleusercontent.com"}>
+          <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID || "307628625740-9cjprtk1hpua2cmhanlee8nqpss26org.apps.googleusercontent.com"}>
             <LanguageProvider>
               <AppRoutes />
               <ToastContainer
