@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg-main: #F8F7F5;
+  --bg-card: #FFFFFF;
+  --bg-sidebar: #FFFFFF;
+  --bg-header: rgba(252, 253, 253, 0.8);
+  --border-main: #E4E4E7;
+  --text-main: #0F172A;
+  --text-muted: #71717A;
+  --bg-input: #FFFFFF;
+  --bg-soft-white: #FCFDFD;
+  --bg-light-cream: #F4F6F8;
+  --bg-pure-white: #FFFFFF;
+  --color-glass: rgba(255, 255, 255, 0.7);
+  --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark {
+  --bg-main: #0B0F19;
+  --bg-card: #151D30;
+  --bg-sidebar: #0F1626;
+  --bg-header: rgba(15, 22, 38, 0.8);
+  --border-main: #1E293B;
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+  --bg-input: #0F1626;
+  --bg-soft-white: #151D30;
+  --bg-light-cream: #0F1626;
+  --bg-pure-white: #1E293B;
+  --color-glass: rgba(21, 29, 48, 0.7);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+@theme {
+  --color-soft-white: var(--bg-soft-white);
+  --color-light-cream: var(--bg-light-cream);
+  --color-orange: #E22D34;
+  --color-deep-navy: var(--text-main);
+  --color-slate-gray: var(--text-muted);
+  --color-soft-gray: var(--border-main);
+  --color-pure-white: var(--bg-pure-white);
+  
+  --color-premium-dark: #1A1C20;
+  
+  --color-green-get: #10B981;
+  --color-red-give: #EF4444;
+  --color-warning-pending: #F59E0B;
+  --color-info-analytics: #3B82F6;
+  
+  --color-orange-hover: #C52329;
+  --color-green-hover: #059669;
+  --color-red-hover: #DC2626;
+}
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-main);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  color: var(--text-main);
+}
+
+/* Smooth Transition class for premium theme toggle */
+body, header, aside, tr, td, th, input, select, textarea, button, 
+.bg-pure-white, .bg-soft-white, .bg-light-cream, .border-soft-gray, .text-deep-navy, .text-slate-gray {
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+              border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+              color 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Premium Glass & Clean Toast Notification Overrides */
+.Toastify__toast-container {
+  padding: 16px !important;
+}
+
+.Toastify__toast {
+  font-family: 'Outfit', 'Inter', -apple-system, sans-serif !important;
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05) !important;
+  padding: 14px 16px !important;
+  min-height: auto !important;
+  align-items: flex-start !important; /* Align content & close button to the top */
+}
+
+.dark .Toastify__toast {
+  background-color: #151D30 !important;
+  color: #F8FAFC !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Success Toast - Green Border */
+.Toastify__toast--success {
+  border: 1px solid #10B981 !important;
+}
+
+/* Error Toast - Red Border */
+.Toastify__toast--error {
+  border: 1px solid #EF4444 !important;
+}
+
+/* Info Toast - Blue Border */
+.Toastify__toast--info {
+  border: 1px solid #3B82F6 !important;
+}
+
+/* Warning Toast - Yellow/Orange Border */
+.Toastify__toast--warning {
+  border: 1px solid #F59E0B !important;
+}
+
+.Toastify__toast-body {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+}
+
+.Toastify__toast-icon {
+  margin-top: 2px !important;
+  margin-right: 12px !important;
+  width: 22px !important;
+  height: 22px !important;
+}
+
+.Toastify__close-button {
+  align-self: flex-start !important;
+  color: #71717A !important;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+  margin-top: 2px !important;
+  padding: 0 !important;
+}
+
+.dark .Toastify__close-button {
+  color: #94A3B8 !important;
+}
+
+.Toastify__close-button:hover {
+  opacity: 1;
+}
+
+/* Hide progress bar for clean appearance matching request screenshot */
+.Toastify__progress-bar {
+  display: none !important;
+}
+
+/* Standard SVG icon color alignments */
+.Toastify__toast--success .Toastify__toast-icon svg {
+  fill: #10B981 !important;
+}
+.Toastify__toast--error .Toastify__toast-icon svg {
+  fill: #EF4444 !important;
+}
+.Toastify__toast--info .Toastify__toast-icon svg {
+  fill: #3B82F6 !important;
+}
+.Toastify__toast--warning .Toastify__toast-icon svg {
+  fill: #F59E0B !important;
+}
