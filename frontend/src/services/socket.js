@@ -1,6 +1,19 @@
 import { io } from 'socket.io-client';
 
-const backendUrl = window.location.hostname === 'localhost' ? 'http://localhost:4000' : window.location.origin;
+const getBackendUrl = () => {
+  if (import.meta.env.VITE_SOCKET_URL) {
+    return import.meta.env.VITE_SOCKET_URL;
+  }
+  if (import.meta.env.VITE_API_URL) {
+    return import.meta.env.VITE_API_URL.replace(/\/api\/?$/, '');
+  }
+  if (import.meta.env.PROD) {
+    return 'https://digital-udhaar-katha.onrender.com';
+  }
+  return 'http://localhost:4000';
+};
+
+const backendUrl = getBackendUrl();
 
 let socket = null;
 
